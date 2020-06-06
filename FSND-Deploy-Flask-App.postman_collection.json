@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "1d6891cf-5535-4ef6-af2b-5fafc7b55c45",
+		"name": "FSND-Deploy-Flask-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "a4be32bd2b8b145eb8baf25031eb8c58-1150093568.us-west-2.elb.amazonaws.com",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1aecd342-980b-4f79-a987-03efa85a5cdc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "a4be32bd2b8b145eb8baf25031eb8c58-1150093568.us-west-2.elb.amazonaws.com",
+					"host": [
+						"a4be32bd2b8b145eb8baf25031eb8c58-1150093568",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a4be32bd2b8b145eb8baf25031eb8c58-1150093568.us-west-2.elb.amazonaws.com/auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20f6627f-deb0-44fd-88a4-0bd8a69b25f7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"Azooz\",\"password\":\"testPassword\"}"
+				},
+				"url": {
+					"raw": "a4be32bd2b8b145eb8baf25031eb8c58-1150093568.us-west-2.elb.amazonaws.com/auth",
+					"host": [
+						"a4be32bd2b8b145eb8baf25031eb8c58-1150093568",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a4be32bd2b8b145eb8baf25031eb8c58-1150093568.us-west-2.elb.amazonaws.com/contents",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c96db94e-52c8-440e-b985-83239a7b3d8f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTI2OTM5NzIsIm5iZiI6MTU5MTQ4NDM3MiwiZW1haWwiOiJBem9veiJ9.208LdS80ATeVUFZi07QaC4T4Y_lVRwWwgeBODBrSqII",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "a4be32bd2b8b145eb8baf25031eb8c58-1150093568.us-west-2.elb.amazonaws.com/contents",
+					"host": [
+						"a4be32bd2b8b145eb8baf25031eb8c58-1150093568",
+						"us-west-2",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"contents"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
